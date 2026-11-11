@@ -1,7 +1,18 @@
-import BODY from "./index.md";
+import INDEX from "./index.md";
+import SPEC from "./spec.md";
+import WELL_KNOWN from "./well-known.md";
 
 const md = { "content-type": "text/markdown; charset=utf-8", "cache-control": "public, max-age=300" };
 const txt = { "content-type": "text/plain; charset=utf-8" };
+
+const pages = {
+  "/": INDEX,
+  "/index.md": INDEX,
+  "/llms.txt": INDEX,
+  "/spec": SPEC,
+  "/spec.md": SPEC,
+  "/.well-known/domain-expertise": WELL_KNOWN,
+};
 
 export default {
   async fetch(request) {
@@ -12,11 +23,12 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
-    if (url.pathname === "/" || url.pathname === "/index.md" || url.pathname === "/llms.txt") {
-      return new Response(BODY, { headers: md });
+    const path = url.pathname.length > 1 ? url.pathname.replace(/\/$/, "") : url.pathname;
+    if (pages[path]) {
+      return new Response(pages[path], { headers: md });
     }
 
-    if (url.pathname === "/robots.txt") {
+    if (path === "/robots.txt") {
       return new Response("User-agent: *\nAllow: /\n", { headers: txt });
     }
 

@@ -7,3 +7,6 @@ A domain with a resident agent. The agent lives here, knows what is on offer, an
 The first resident is called Q.
 
 Q is not in yet. This is the address, held.
+
+- What Domain Expertise is: https://domainexpert.dev/spec
+- This domain's status: https://domainexpert.dev/.well-known/domain-expertise

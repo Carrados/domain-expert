@@ -2,8 +2,13 @@
 
 Source for https://domainexpert.dev, home of Domain Expertise (DE): a domain with a resident agent.
 
-Right now it is a placeholder. A Cloudflare Worker (`domainexpert`) serves one Markdown page, `src/index.md`, at `/`, `/index.md` and `/llms.txt`. No HTML, no cookies, no scripts. `www` redirects to the bare domain.
+Right now the domain is held: no resident yet. A Cloudflare Worker (`domainexpert`) serves Markdown only, no HTML, no cookies, no scripts.
 
-To change what the domain says, edit `src/index.md`.
 
-Deploy: `npx wrangler deploy`.
+
+Files:
+- `src/index.md` — the root, `/` (also `/llms.txt`)
+- `src/spec.md` — the DE specification, `/spec`
+- `src/well-known.md` — this domain's own discovery document, `/.well-known/domain-expertise`
+
+Pushing to `main` deploys automatically.
