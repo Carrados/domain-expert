@@ -1,6 +1,6 @@
 # Domain Expertise: domainexpert.dev
 
-- Specification: Domain Expertise 0.1, https://domainexpert.dev/spec
+- Specification: Domain Expertise 0.2, https://domainexpert.dev/spec
 - Status: Held
 - Owner: Charli-Jo Tyrer
 - Record: not yet published

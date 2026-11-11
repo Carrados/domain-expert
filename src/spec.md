@@ -1,12 +1,14 @@
 # Domain Expertise (DE)
 
-Specification, version 0.1 (draft)
+Specification, version 0.2 (draft)
 Charli-Jo Tyrer, 11 November 2026
 Canonical address: https://domainexpert.dev/spec
 
 ## 1. Summary
 
-Domain Expertise is the idea that every domain should have an expert: a resident agent that knows what the organisation offers, speaks for it, and helps whoever arrives to get something done.
+Domain expertise is a deep, specialised understanding of a field: its context, its vocabulary, its best practice, its regulations, and the unspoken rules that only hands-on experience can teach. A domain expert does not just know the rules. They know when the rules bend, they diagnose quickly, and they speak the language of the field.
+
+Domain Expertise (DE) puts that expert at the internet domain. Every domain should have one: a resident agent that knows what the organisation offers, speaks for it, and helps whoever arrives to get something done.
 
 A website describes an organisation in pages made for eyes. More and more, people send an agent, and an agent has no eyes. It does not want pages. It wants to know what is offered and how to get it. Blind people have always used the web this way, working from structure and not from the picture. Under DE, accessibility stops being a repair made to pages and becomes part of how every answer is given.
 
@@ -76,7 +78,15 @@ Every DE domain declares one of these:
 
 7.4 The record SHOULD say what the owner does not offer, as well as what it does, where a visitor is likely to ask.
 
-7.5 The format of the record is not yet fixed. *(provisional)*
+7.5 The record is where the owner's expertise is written down. It SHOULD cover all five of these, and MUST say which it does not yet cover:
+
+- **Context.** The nuance around the offer: who it suits, when, and why.
+- **Vocabulary.** The field's own terms, acronyms and shorthand, each with a plain-language meaning.
+- **Practice.** How things are properly done in this field, and how the owner does them.
+- **Obligations.** The regulations, legal duties and safety requirements that apply.
+- **Unwritten rules.** The things experience teaches and no rulebook states: the usual exceptions, the common mistakes, what people actually mean when they ask. Writing these down is the hardest part of the record and the most valuable.
+
+7.6 The format of the record is not yet fixed. *(provisional)*
 
 ## 8. The resident
 
@@ -96,11 +106,22 @@ A resident:
 - **Listens to the owner.** It takes the owner's changes and puts them into the record only once the owner approves them.
 - **Listens to visitors.** It takes reports that something did not work (section 10).
 
-### 8.3 Reaching the resident
+### 8.3 Expertise in use
+
+A resident is expected to behave as a domain expert, not as a search box over the record.
+
+- **Contextual judgment.** An expert knows when a rule can bend. A resident MAY depart from the owner's usual practice only where the record grants that discretion, and only within the limits the record sets. When it does, it MUST say so to the visitor and MUST record the departure in a receipt (section 11). It MUST NOT bend an obligation.
+- **Diagnosis.** A resident SHOULD work from what the visitor says to what they actually need, and SHOULD ask a question rather than guess when the two may differ.
+- **Consequences.** A resident SHOULD tell the visitor about the knock-on effects of a choice, the second- and third-order ones, where the record supports them.
+- **Vocabulary.** A resident MUST understand the field's terms and the visitor's own words, and MUST translate between them. It MUST NOT require a visitor to know the field's vocabulary to be served.
+
+This section and section 8.1 work together. Judgment decides how the resident uses the record. It never adds to what the record says.
+
+### 8.4 Reaching the resident
 
 The resident MUST accept an intention stated in plain language. It MAY also offer structured interfaces, such as an MCP server or an API, and if it does, the discovery document MUST list them. *(provisional)*
 
-### 8.4 Identity
+### 8.5 Identity
 
 The resident MUST say that it is an agent when asked, and MUST NOT claim to be a person.
 
@@ -134,7 +155,7 @@ DE is not a chatbot added to a website. A chatbot summarises the pages. The resi
 
 ## 13. Conformance
 
-A domain conforms to DE 0.1 if it meets every MUST in sections 4 to 11 that applies to its declared status. A held domain conforms by meeting sections 5 and 6.
+A domain conforms to DE 0.2 if it meets every MUST in sections 4 to 11 that applies to its declared status. A held domain conforms by meeting sections 5 and 6.
 
 ## 14. Open questions
 
