@@ -12,3 +12,5 @@ Files:
 - `src/well-known.md` — this domain's own discovery document, `/.well-known/domain-expertise`
 
 Pushing to `main` deploys automatically.
+
+People with a browser get HTML; agents get the same Markdown. Addresses ending in `.md`, and `/llms.txt`, are always Markdown. `?format=md` or `?format=html` overrides.

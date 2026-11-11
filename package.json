@@ -1,0 +1,23 @@
+{
+  "name": "domain-expert",
+  "version": "1.0.0",
+  "description": "Source for https://domainexpert.dev, home of Domain Expertise (DE): a domain with a resident agent.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carrados/domain-expert.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Carrados/domain-expert/issues"
+  },
+  "homepage": "https://github.com/Carrados/domain-expert#readme",
+  "dependencies": {
+    "marked": "^15.0.12"
+  }
+}
