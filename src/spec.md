@@ -1,6 +1,6 @@
 # Domain Expertise (DE)
 
-Specification, version 0.2 (draft)
+Specification, version 0.3 (draft)
 Charli-Jo Tyrer, 11 November 2026
 Canonical address: https://domainexpert.dev/spec
 
@@ -54,7 +54,7 @@ This separation is the point of DE. The record can be read and checked without t
 - who the owner is;
 - where the record can be read;
 - how to reach the resident, if one is in residence;
-- how to report that something did not work (section 10).
+- how to report that something did not work (section 10.3).
 
 5.4 The discovery document SHOULD be Markdown. It MAY also be offered in other formats, chosen by the visitor's `Accept` header. *(provisional)*
 
@@ -104,7 +104,8 @@ A resident:
 - **Acts.** It books the place, takes the enquiry or makes the choice, within what the owner has allowed. It MUST NOT act beyond that.
 - **Adapts.** It gives each visitor the answer in a form they can use (section 9).
 - **Listens to the owner.** It takes the owner's changes and puts them into the record only once the owner approves them.
-- **Listens to visitors.** It takes reports that something did not work (section 10).
+- **Listens to visitors.** It takes reports that something did not work (section 10.3).
+- **Grows the record.** It finds the gaps in what it knows and brings them to the owner (section 10).
 
 ### 8.3 Expertise in use
 
@@ -125,6 +126,14 @@ The resident MUST accept an intention stated in plain language. It MAY also offe
 
 The resident MUST say that it is an agent when asked, and MUST NOT claim to be a person.
 
+### 8.6 Character
+
+8.6.1 A resident MAY be anchored in a recognisable archetype of expertise: the quartermaster, the detective, the fixer, the diagnostician. Language models carry strong priors on how such experts think and speak, and an archetype gives the resident a stable manner from the start. This is the seed-with-convention step from *Growing a Court*.
+
+8.6.2 An archetype shapes manner only. It MUST NOT add to the substance of what the resident says (section 8.1). A resident modelled on a detective may notice like one; it may not deduce facts the record does not hold.
+
+8.6.3 The record works as the resident's jig. It constrains by saying what the resident must not be, and the resident's own competence fills in everything consistent with it.
+
 ## 9. Equivalence
 
 9.1 Every visitor MUST receive the same substance. Only the form may change.
@@ -135,11 +144,35 @@ The resident MUST say that it is an agent when asked, and MUST NOT claim to be a
 
 9.4 Pages are allowed. Where a DE domain also serves pages for people who arrive with a browser, those pages are one more form of the record, and section 9.1 applies to them.
 
-## 10. Putting things right
+## 10. Growing the record
 
-10.1 Any visitor MUST be able to report that something did not work for them, in plain language, without signing in.
+A record is never finished. It grows the way a persona in a Court grows: by use, then distillation, then use again. This section adapts the grow-distil cycle from *Growing a Court* (Tyrer, 2026) to a real organisation, where the truth belongs to the owner.
 
-10.2 The owner SHOULD put the problem right, and SHOULD check the fix with the visitor who reported it where the visitor has left a way to reach them.
+### 10.1 The cycle
+
+1. **Grow.** The resident answers: real visitors, and questions put to it on purpose. Each answer forces it to commit to specifics, and so shows where the record is thin.
+2. **Ask what was learned.** After a round, the resident lists what the round revealed: where it had to say it did not know, where it came close to guessing, where it sounded expert with nothing in the record behind it, and what visitors reported had not worked.
+3. **Interview the owner.** The resident takes those gaps to the owner as questions. This is where unwritten rules (section 7.5) are found: owners know them but have rarely had to say them. The resident SHOULD ask for the true version, not the polished one.
+4. **Distil.** The resident drafts new record lines from the owner's answers, in the owner's words where possible.
+5. **Approve.** The owner approves, corrects or rejects each line. Only approved lines enter the record (section 7.2).
+
+Then the cycle repeats, and every new round must stay consistent with everything already approved. Each round makes the resident more like the owner's own expert and less like an average one.
+
+### 10.2 The gate
+
+10.2.1 In a Court, the gate is the question: is this the persona, or the persona performing itself? In DE the gate is: is this the owner's knowledge, or the resident performing expertise?
+
+10.2.2 The owner MUST be the gate. Nothing the resident generates, however plausible, becomes part of the record without the owner's approval.
+
+10.2.3 A line drafted by the resident MUST be marked as a draft until approved, and MUST NOT be used to answer visitors while it is a draft.
+
+### 10.3 Putting things right
+
+10.3.1 Any visitor MUST be able to report that something did not work for them, in plain language, without signing in.
+
+10.3.2 Every report enters the cycle at step 2.
+
+10.3.3 The owner SHOULD put the problem right, and SHOULD check the fix with the visitor who reported it where the visitor has left a way to reach them.
 
 ## 11. Receipts
 
@@ -155,7 +188,7 @@ DE is not a chatbot added to a website. A chatbot summarises the pages. The resi
 
 ## 13. Conformance
 
-A domain conforms to DE 0.2 if it meets every MUST in sections 4 to 11 that applies to its declared status. A held domain conforms by meeting sections 5 and 6.
+A domain conforms to DE 0.3 if it meets every MUST in sections 4 to 11 that applies to its declared status. A held domain conforms by meeting sections 5 and 6.
 
 ## 14. Open questions
 
@@ -166,4 +199,9 @@ A domain conforms to DE 0.2 if it meets every MUST in sections 4 to 11 that appl
 
 ## 15. Example
 
-domainexpert.dev is a DE domain with status Held. Its first resident will be called Q.
+domainexpert.dev is a DE domain with status Held. Its first resident will be called Q, after the quartermaster: the one who provides everything needed, in the form and format needed.
+
+## 16. References
+
+- Charli-Jo Tyrer, *Growing a Court: A Recursive Persona Architecture Built from Inference Engineering*. Source of the grow-distil cycle, jigs, and archetype seeding used in sections 8.6 and 10.
+- RFC 2119, *Key words for use in RFCs to Indicate Requirement Levels*.
